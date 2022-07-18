@@ -1,0 +1,49 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+  - main
+
+variables:
+  buildConfiguration: "Release"
+  vmImageName: windows-latest
+  environmentName: "aspnet-core-devops"
+
+stages:
+  - stage: Build
+    displayName: Build
+    jobs:
+      - job: Build
+        displayName: Build Stage
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: UseDotNet@2
+            displayName: .NET 6 SDK
+            inputs:
+              packageType: "sdk"
+              version: "6.x"
+              includePreviewVersions: true
+
+          - task: DotNetCoreCLI@2
+            displayName: dotnet Build
+            inputs:
+              command: build
+              projects: "TodoApi/TodoApi.csproj"
+              arguments: "--configuration $(buildConfiguration)"
+
+          - task: DotNetCoreCLI@2
+            displayName: dotnet Publish
+            inputs:
+              projects: "TodoApi/TodoApi.csproj"
+              command: publish
+              arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/build"
+              zipAfterPublish: false
+
+          - task: PublishBuildArtifacts@1
+            displayName: Publish Artifacts
+            inputs:
+              pathtoPublish: "$(Build.ArtifactStagingDirectory)/build"
+              artifactName: "drop"
