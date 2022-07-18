@@ -36,8 +36,11 @@ stages:
           
           - task: CopyFiles@2
             inputs:
+              SourceFolder: $(Build.SourcesDirectory)
               contents: 'Dockerfile'
               targetFolder: $(Build.ArtifactStagingDirectory)
+          
+ 
 
           - task: DotNetCoreCLI@2
             displayName: dotnet Publish
