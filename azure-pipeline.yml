@@ -10,6 +10,7 @@ variables:
   buildConfiguration: "Release"
   vmImageName: windows-latest
   environmentName: "aspnet-core-devops"
+  imageName: "api"
 
 stages:
   - stage: Build
