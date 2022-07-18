@@ -62,4 +62,4 @@ stages:
             inputs:
               repository: $(imageName)
               command: build
-              Dockerfile: Dockerfile
+              Dockerfile: $(Build.ArtifactStagingDirectory)/build
