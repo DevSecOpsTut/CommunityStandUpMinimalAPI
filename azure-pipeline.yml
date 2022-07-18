@@ -34,10 +34,10 @@ stages:
               projects: "TodoApi/TodoApi.csproj"
               arguments: "--configuration $(buildConfiguration)"
           
-           - task: CopyFiles@2
-             inputs:
-                contents: 'Dockerfile'
-                targetFolder: $(Build.ArtifactStagingDirectory)
+          - task: CopyFiles@2
+            inputs:
+              contents: 'Dockerfile'
+              targetFolder: $(Build.ArtifactStagingDirectory)
 
           - task: DotNetCoreCLI@2
             displayName: dotnet Publish
