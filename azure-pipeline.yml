@@ -38,7 +38,7 @@ stages:
             inputs:
               SourceFolder: $(Build.SourcesDirectory)
               contents: 'Dockerfile'
-              targetFolder: $(Build.ArtifactStagingDirectory)
+              targetFolder: $(Build.ArtifactStagingDirectory)/build
           
  
 
