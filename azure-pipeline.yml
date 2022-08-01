@@ -11,7 +11,7 @@ variables:
   vmImageName: windows-latest
   environmentName: "aspnet-core-devops"
   imageName: "api"
-  AzureRegistryServiceConnection: "azure_portal"
+  dockerRegistryServiceConnection: "azure_portal"
 
 stages:
   - stage: Build
@@ -71,7 +71,7 @@ stages:
               command: buildAndPush
               repository: $(imageName)
               dockerfile: $(Build.ArtifactStagingDirectory)/build/TodoApi/Dockerfile
-              containerRegistry: $(AzureRegistryServiceConnection)
+              containerRegistry: $(dockerRegistryServiceConnection)
   
           
         
