@@ -11,7 +11,7 @@ variables:
   vmImageName: windows-latest
   environmentName: "aspnet-core-devops"
   imageName: "api"
-  dockerRegistryServiceConnection: "azure_portal"
+  dockerRegistryServiceConnection: "docker_registry"
 
 stages:
   - stage: Build
