@@ -62,4 +62,4 @@ stages:
             inputs:
               repository: $(imageName)
               command: build
-              Dockerfile: drop/Dockerfile
+              Dockerfile: drop/TodoApi/Dockerfile
