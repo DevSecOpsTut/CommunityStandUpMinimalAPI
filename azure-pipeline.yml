@@ -65,5 +65,4 @@ stages:
               repository: $(imageName)
               dockerfile: $(Build.ArtifactStagingDirectory)/build/TodoApi/Dockerfile
               #containerRegistry: $(dockerRegistryServiceConnection)
-              tags: |
-                $(tag)
+              
