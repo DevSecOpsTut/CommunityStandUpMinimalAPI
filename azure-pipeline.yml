@@ -63,7 +63,7 @@ stages:
             inputs:
               command: buildAndPush
               repository: $(imageName)
-              dockerfile: drop/TodoApi/Dockerfile
+              dockerfile: $(Build.ArtifactStagingDirectory)/build/TodoApi/Dockerfile
               #containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
                 $(tag)
