@@ -41,7 +41,7 @@ stages:
             inputs:
               SourceFolder: $(Build.SourcesDirectory)
               contents: 'Dockerfile'
-              targetFolder: $(Build.ArtifactStagingDirectory)/build/TodoApi
+              targetFolder: $(Build.ArtifactStagingDirectory)/TodoApi
           
  
 
@@ -50,13 +50,13 @@ stages:
             inputs:
               projects: "TodoApi/TodoApi.csproj"
               command: publish
-              arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/build"
+              arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
               zipAfterPublish: false
 
           - task: PublishBuildArtifacts@1
             displayName: Publish Artifacts
             inputs:
-              pathtoPublish: "$(Build.ArtifactStagingDirectory)/build"
+              pathtoPublish: "$(Build.ArtifactStagingDirectory)"
               artifactName: "drop"
 
           #- task: Docker@2
@@ -71,7 +71,7 @@ stages:
             inputs:
               command: buildAndPush
               repository: $(imageName)
-              dockerfile: $(Build.ArtifactStagingDirectory)/build/TodoApi/Dockerfile
+              dockerfile: $(Build.ArtifactStagingDirectory)/TodoApi/Dockerfile
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
                 $(tag)
