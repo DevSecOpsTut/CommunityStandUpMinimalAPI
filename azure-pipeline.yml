@@ -12,7 +12,7 @@ variables:
   environmentName: "aspnet-core-devops"
   imageName: "neethucleetus/api"
   dockerRegistryServiceConnection: "azureRegistry"
-  tag: "112"
+  tag: "$(Build.BuildId)"
 
 stages:
   - stage: Build
