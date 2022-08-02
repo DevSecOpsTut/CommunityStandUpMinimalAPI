@@ -11,7 +11,7 @@ variables:
   vmImageName: windows-latest
   environmentName: "aspnet-core-devops"
   imageName: "neethucleetus/api"
-  dockerRegistryServiceConnection: "azureRegistry"
+  dockerRegistryServiceConnection: "azure_portal"
   tag: "$(Build.BuildId)"
 
 stages:
