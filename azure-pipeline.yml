@@ -11,7 +11,7 @@ variables:
   vmImageName: windows-latest
   environmentName: "aspnet-core-devops"
   imageName: "neethucleetus/api"
-  dockerRegistryServiceConnection: "azure_portal"
+  dockerRegistryServiceConnection: "azrdotnetcontainerregistry.azurecr.io"
   tag: "112"
 
 stages:
