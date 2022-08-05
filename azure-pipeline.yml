@@ -42,6 +42,12 @@ stages:
               SourceFolder: $(Build.SourcesDirectory)
               contents: 'Dockerfile'
               targetFolder: $(Build.ArtifactStagingDirectory)/TodoApi
+            
+          - task: CopyFiles@2
+            inputs:
+              SourceFolder: $(Build.SourcesDirectory)
+              contents: 'azuredotnet.yaml'
+              targetFolder: $(Build.ArtifactStagingDirectory)/TodoApi
           
  
 
