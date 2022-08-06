@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mydotnetdockerrepo
-        image: in28min/hello-world-nodejs:0.0.2.RELEASE
+        image: sample1container.azurecr.io/samples/nodejs
         ports:
         - containerPort: 5000
 # service type loadbalancer       
