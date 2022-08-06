@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: mydotnetdockerrepo
-        image: sample1container.azurecr.io/neethucleetus/api:#{Build.BuildId}#
+        image: in28min/hello-world-nodejs:0.0.2.RELEASE
         ports:
-        - containerPort: 80
+        - containerPort: 5000
 # service type loadbalancer       
 ---
 apiVersion: v1
