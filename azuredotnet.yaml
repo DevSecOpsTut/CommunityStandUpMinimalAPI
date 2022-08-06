@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mydotnetdockerrepo
-        image: neethucleetus/api:#{Build.BuildId}#
+        image: sample1container.azurecr.io/neethucleetus/api:#{Build.BuildId}#
         ports:
         - containerPort: 80
 # service type loadbalancer       
