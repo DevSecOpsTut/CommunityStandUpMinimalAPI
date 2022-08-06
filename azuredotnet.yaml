@@ -13,8 +13,8 @@ spec:
         app: dotnetapiazr-app
     spec:
       containers:
-      - name: mypythondockerrepo
-        image: azrdotnetk8scontainer.azurecr.io/neethucleetus/api:#{Build.BuildId}#
+      - name: mydotnetdockerrepo
+        image: sample1container.azurecr.io/neethucleetus/api:#{Build.BuildId}#
         ports:
         - containerPort: 80
 # service type loadbalancer       
