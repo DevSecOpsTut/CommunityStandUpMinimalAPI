@@ -17,6 +17,8 @@ spec:
         image: sample1container.azurecr.io/samples/nodejs:latest
         ports:
         - containerPort: 5000
+      imagePullSecrets:
+        - name: acr-secret
 # service type loadbalancer       
 ---
 apiVersion: v1
