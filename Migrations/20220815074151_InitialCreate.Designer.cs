@@ -3,35 +3,34 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using MovieDb.Models;
 
-namespace Sample.Migrations
+#nullable disable
+
+namespace MovieDb.Migrations
 {
-    [DbContext(typeof(TodoDbContext))]
-    [Migration("20210619023404_Initial")]
-    partial class Initial
+    [DbContext(typeof(MovieContext))]
+    [Migration("20220815074151_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.0-preview.6.21318.1");
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.8");
 
-            modelBuilder.Entity("Todo", b =>
+            modelBuilder.Entity("MovieDb.Models.Movie", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("MovieId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("IsComplete")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Title")
+                    b.Property<string>("MovieName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("MovieId");
 
-                    b.ToTable("Todos");
+                    b.ToTable("Movies");
                 });
 #pragma warning restore 612, 618
         }

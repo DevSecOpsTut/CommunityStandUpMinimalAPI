@@ -1,12 +1,14 @@
-## Todo REST API with ASP.NET Core Minimal APIs
+## Movie API with ASP.NET Core 6 Minimal APIs
 
-Todo REST API samples using ASP.NET Core minimal APIs. It showcases:
+Movie API samples using ASP.NET Core 6 minimal APIs. It showcases:
 - Using EntityFramework and SQLite for data access
 - OpenAPI support
 - Writing tests for your REST API
 
-### Download .NET Preview builds
+### Usecase
 
-https://github.com/dotnet/installer#build-status
+- Used for docker containerization sample applications
+- Used for K8 sample
+- Used for AWS and Azure pipeline
 
 
