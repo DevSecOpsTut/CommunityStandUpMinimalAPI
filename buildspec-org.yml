@@ -26,13 +26,9 @@ phases:
       # https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/dotnet-linux-platform-bundle-app.html
       - dotnet publish -c Release -r linux-x64 -o ./ test-api/test-api.csproj
       
-artifacts:
-  files:
-    - ./**/*
-    version: 0.2
 
 
-phases:
+
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
