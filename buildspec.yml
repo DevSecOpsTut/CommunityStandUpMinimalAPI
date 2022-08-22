@@ -16,7 +16,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - dotnet build "./MovieDb.csproj"
+      - RUN dotnet build "MovieDb.csproj" -c Release -o /app/build
+      - echo dotnet build "./MovieDb.csproj"
       - echo Test started on `date`
       
       
